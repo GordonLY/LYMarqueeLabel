@@ -22,24 +22,24 @@ open class LYMarqueeLabel: UIScrollView {
     
     public weak var marqueeDelegate: LYMarqueeLabelDelegate?
     ///  跑马灯文字
-    open var marqueeTitle: NSAttributedString
+    private var marqueeTitle: NSAttributedString
     ///  类型
-    open var marqueeType: LYMarqueeLabelType
+    private var marqueeType: LYMarqueeLabelType
     ///  速率 秒 [0...10]
-    open var marqueeVelocity: TimeInterval
+    private var marqueeVelocity: TimeInterval
     ///  内边距
-    open var marqueeInset: UIEdgeInsets
+    private var marqueeInset: UIEdgeInsets
     ///  每次循环滚动的间距
-    open var marqueeSpace: CGFloat
-    ///  最小的滚动字符数量 default = 5 (小于5个字符时，不滚动)
-    open var minMarqueeLength: Int
+    private var marqueeSpace: CGFloat
+    ///  最小的滚动字符数量 default = 0 (小于0个字符时，不滚动)
+    private var minMarqueeLength: Int
  
     public init(frame: CGRect = .zero,
          type: LYMarqueeLabelType = .left2right,
          velocity: TimeInterval = 1,
          inset: UIEdgeInsets = .zero,
          space: CGFloat = 30,
-         minLength: Int = 5) {
+         minLength: Int = 0) {
         self.marqueeTitle = NSAttributedString()
         self.marqueeType = type
         self.marqueeVelocity = velocity
@@ -62,11 +62,12 @@ open class LYMarqueeLabel: UIScrollView {
 // MARK: - ********* Public Mehtod
 extension LYMarqueeLabel {
     public func start(_ attrTitle: NSAttributedString) {
-        if attrTitle.length > 0 {
+        if !attrTitle.isEqual(to: marqueeTitle) {
             self.marqueeTitle = attrTitle
+            p_endTimer()
             p_initMarqueeType()
+            p_start()
         }
-        p_start()
     }
     public func pause() {
         p_endTimer()
@@ -85,18 +86,16 @@ extension LYMarqueeLabel {
     
     // MARK: === 开始 Marquee
     private func p_start() {
-        guard marqueeTitle.length > 0 else { return }
-        p_endTimer()
+        guard marqueeTitle.length > minMarqueeLength else { return }
         p_startTimer()
     }
     // MARK: === start timer
     private func p_startTimer() {
         guard marqueeTitle.length > minMarqueeLength else { return }
-        timer = Timer.lyScheduledTimer(withInterval: marqueeVelocity, isRepeat: true, callback: { [weak self](tim) in
+        timer = Timer.lyEvery(marqueeVelocity, { [weak self]() in
             guard let `self` = self else { return }
             self.p_updateMarquee()
         })
-        RunLoop.main.add(timer!, forMode: .commonModes)
     }
     
     // MARK: === end timer
@@ -116,7 +115,7 @@ extension LYMarqueeLabel {
     }
     // MARK: === 更新 marquee -> left2right
     private func p_updateMarqueeLeft2right() {
-        let maxOffsetX = marqueeInset.left + leftLabel.ly_width + marqueeSpace
+        let maxOffsetX = marqueeInset.left + leftLabel.m_width + marqueeSpace
         if self.contentOffset.x >= maxOffsetX {
             p_endTimer()
             self.contentOffset = CGPoint(x: marqueeInset.left + 1, y: 0)
@@ -135,6 +134,7 @@ extension LYMarqueeLabel {
         self.backgroundColor = UIColor.white
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
+        p_initVelocity()
     }
     // MARK: === 初始化 LYMarqueeLabelType
     private func p_initMarqueeType() {
@@ -144,15 +144,15 @@ extension LYMarqueeLabel {
         default:
             break
         }
-        p_initVelocity()
     }
     // MARK: === left2right init
     private func p_initLeft2right() {
         
-        let titleWidth = marqueeTitle.boundingRect(with: CGSize(width: 0, height: self.ly_height), options: .usesLineFragmentOrigin, context: nil).width
-        let labelWidth = max(titleWidth, self.ly_width)
-        leftLabel.frame = CGRect(x: marqueeInset.left, y: 0, width: labelWidth, height: self.ly_height)
-        rightLabel.frame = CGRect(x: leftLabel.frame.maxX + marqueeSpace, y: 0, width: labelWidth, height: self.ly_height)
+        self.setContentOffset(.zero, animated: false)
+        let titleWidth = marqueeTitle.boundingRect(with: CGSize(width: 0, height: self.m_height), options: .usesLineFragmentOrigin, context: nil).width
+        let labelWidth = max(titleWidth, self.m_width)
+        leftLabel.frame = CGRect(x: marqueeInset.left, y: 0, width: labelWidth, height: self.m_height)
+        rightLabel.frame = CGRect(x: leftLabel.frame.maxX + marqueeSpace, y: 0, width: labelWidth, height: self.m_height)
         leftLabel.attributedText = marqueeTitle
         rightLabel.attributedText = marqueeTitle
         self.addSubview(leftLabel)
@@ -176,9 +176,14 @@ extension LYMarqueeLabel {
     private func p_layoutChanged() {
         guard marqueeTitle.length > 0 else { return }
         guard leftLabel.superview != nil else { return }
-        let titleWidth = marqueeTitle.boundingRect(with: CGSize(width: 0, height: self.ly_height), options: .usesLineFragmentOrigin, context: nil).width
-        let labelWidth = max(titleWidth, self.ly_width)
-        leftLabel.ly_width = labelWidth
-        rightLabel.frame = CGRect(x: leftLabel.frame.maxX + marqueeSpace, y: 0, width: labelWidth, height: self.ly_height)
+        p_endTimer()
+        let titleWidth = marqueeTitle.boundingRect(with: CGSize(width: 0, height: self.m_height), context: nil).width
+        let labelWidth = max(titleWidth, self.m_width)
+        leftLabel.m_size = CGSize(width: labelWidth, height: self.m_height)
+        rightLabel.frame = CGRect(x: leftLabel.frame.maxX + marqueeSpace, y: 0, width: labelWidth, height: self.m_height)
+        self.contentOffset = CGPoint(x: self.contentOffset.x + 1, y: self.contentOffset.y)
+        p_startTimer()
     }
 }
+
+

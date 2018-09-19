@@ -11,13 +11,24 @@ import UIKit
 
 extension Timer {
     
-    static func lyScheduledTimer(withInterval interval: TimeInterval, isRepeat: Bool, callback: ((Timer) -> Void)?) -> Timer {
-        return self.scheduledTimer(timeInterval: interval, target: self, selector: #selector(p_start(_:)), userInfo: callback, repeats: isRepeat)
+    @discardableResult
+    public class func lyEvery(_ interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
+        let timer = Timer.lyNew(every: interval, block)
+        timer.start()
+        return timer
     }
     
-    @objc static private func p_start(_ timer: Timer) {
-        if let callback = timer.userInfo as? ((Timer) -> Void) {
-            callback(timer)
+    private class func lyNew(every interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
+        return CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent() + interval, interval, 0, 0) { _ in
+            block()
+        }
+    }
+    
+    private func start(runLoop: RunLoop = .current, modes: RunLoopMode...) {
+        let modes = modes.isEmpty ? [.commonModes] : modes
+        
+        for mode in modes {
+            runLoop.add(self, forMode: mode)
         }
     }
 }

@@ -14,7 +14,7 @@
 		B63AC1BA2151FF3C007709A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63AC1B82151FF3C007709A0 /* LaunchScreen.storyboard */; };
 		B63AC1C52151FF70007709A0 /* LYMarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AC1C22151FF70007709A0 /* LYMarqueeLabel.swift */; };
 		B63AC1C62151FF70007709A0 /* LYMarqueeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AC1C32151FF70007709A0 /* LYMarqueeTimer.swift */; };
-		B63AC1C72151FF70007709A0 /* UIView+Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AC1C42151FF70007709A0 /* UIView+Rect.swift */; };
+		B6B78CDB21523F3B001C849C /* UIView+Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B78CDA21523F3A001C849C /* UIView+Rect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		B63AC1BB2151FF3C007709A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B63AC1C22151FF70007709A0 /* LYMarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYMarqueeLabel.swift; sourceTree = "<group>"; };
 		B63AC1C32151FF70007709A0 /* LYMarqueeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYMarqueeTimer.swift; sourceTree = "<group>"; };
-		B63AC1C42151FF70007709A0 /* UIView+Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Rect.swift"; sourceTree = "<group>"; };
+		B6B78CDA21523F3A001C849C /* UIView+Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Rect.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			children = (
 				B63AC1C22151FF70007709A0 /* LYMarqueeLabel.swift */,
 				B63AC1C32151FF70007709A0 /* LYMarqueeTimer.swift */,
-				B63AC1C42151FF70007709A0 /* UIView+Rect.swift */,
+				B6B78CDA21523F3A001C849C /* UIView+Rect.swift */,
 			);
 			path = LYMarqueeLabel;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 				B63AC1C62151FF70007709A0 /* LYMarqueeTimer.swift in Sources */,
 				B63AC1B22151FF3C007709A0 /* ViewController.swift in Sources */,
 				B63AC1B02151FF3C007709A0 /* AppDelegate.swift in Sources */,
-				B63AC1C72151FF70007709A0 /* UIView+Rect.swift in Sources */,
+				B6B78CDB21523F3B001C849C /* UIView+Rect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
