@@ -34,7 +34,7 @@ open class LYMarqueeLabel: UIScrollView {
     ///  最小的滚动字符数量 default = 5 (小于5个字符时，不滚动)
     open var minMarqueeLength: Int
  
-    public init(frame: CGRect,
+    public init(frame: CGRect = .zero,
          type: LYMarqueeLabelType = .left2right,
          velocity: TimeInterval = 1,
          inset: UIEdgeInsets = .zero,
@@ -73,6 +73,9 @@ extension LYMarqueeLabel {
     }
     public func stop() {
         p_endTimer()
+    }
+    public func layoutChanged() {
+        p_layoutChanged()
     }
 }
 
@@ -167,5 +170,15 @@ extension LYMarqueeLabel {
         default:
             break
         }
+    }
+    
+    // MARK: === layout changed
+    private func p_layoutChanged() {
+        guard marqueeTitle.length > 0 else { return }
+        guard leftLabel.superview != nil else { return }
+        let titleWidth = marqueeTitle.boundingRect(with: CGSize(width: 0, height: self.ly_height), options: .usesLineFragmentOrigin, context: nil).width
+        let labelWidth = max(titleWidth, self.ly_width)
+        leftLabel.ly_width = labelWidth
+        rightLabel.frame = CGRect(x: leftLabel.frame.maxX + marqueeSpace, y: 0, width: labelWidth, height: self.ly_height)
     }
 }
