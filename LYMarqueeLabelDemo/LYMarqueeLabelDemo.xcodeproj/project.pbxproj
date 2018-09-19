@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B68CE0DC2150F9E900111F8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CE0DB2150F9E900111F8C /* AppDelegate.swift */; };
-		B68CE0DE2150F9E900111F8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CE0DD2150F9E900111F8C /* ViewController.swift */; };
-		B68CE0E12150F9E900111F8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68CE0DF2150F9E900111F8C /* Main.storyboard */; };
-		B68CE0E32150F9EA00111F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68CE0E22150F9EA00111F8C /* Assets.xcassets */; };
-		B68CE0E62150F9EA00111F8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68CE0E42150F9EA00111F8C /* LaunchScreen.storyboard */; };
-		B68CE0EF2150FA3600111F8C /* UIView+Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CE0EE2150FA3600111F8C /* UIView+Rect.swift */; };
-		B68CE0F12150FA5200111F8C /* LYMarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CE0F02150FA5200111F8C /* LYMarqueeLabel.swift */; };
-		B68CE0F321511CC000111F8C /* LYMarqueeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CE0F221511CC000111F8C /* LYMarqueeTimer.swift */; };
+		B63AC1B02151FF3C007709A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AC1AF2151FF3C007709A0 /* AppDelegate.swift */; };
+		B63AC1B22151FF3C007709A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AC1B12151FF3C007709A0 /* ViewController.swift */; };
+		B63AC1B52151FF3C007709A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63AC1B32151FF3C007709A0 /* Main.storyboard */; };
+		B63AC1B72151FF3C007709A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63AC1B62151FF3C007709A0 /* Assets.xcassets */; };
+		B63AC1BA2151FF3C007709A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63AC1B82151FF3C007709A0 /* LaunchScreen.storyboard */; };
+		B63AC1C52151FF70007709A0 /* LYMarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AC1C22151FF70007709A0 /* LYMarqueeLabel.swift */; };
+		B63AC1C62151FF70007709A0 /* LYMarqueeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AC1C32151FF70007709A0 /* LYMarqueeTimer.swift */; };
+		B63AC1C72151FF70007709A0 /* UIView+Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63AC1C42151FF70007709A0 /* UIView+Rect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B68CE0D82150F9E900111F8C /* LYMarqueeLabelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYMarqueeLabelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B68CE0DB2150F9E900111F8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B68CE0DD2150F9E900111F8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B68CE0E02150F9E900111F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B68CE0E22150F9EA00111F8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B68CE0E52150F9EA00111F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B68CE0E72150F9EA00111F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B68CE0EE2150FA3600111F8C /* UIView+Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Rect.swift"; sourceTree = "<group>"; };
-		B68CE0F02150FA5200111F8C /* LYMarqueeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYMarqueeLabel.swift; sourceTree = "<group>"; };
-		B68CE0F221511CC000111F8C /* LYMarqueeTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYMarqueeTimer.swift; sourceTree = "<group>"; };
+		B63AC1AC2151FF3C007709A0 /* LYMarqueeLabelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYMarqueeLabelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B63AC1AF2151FF3C007709A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B63AC1B12151FF3C007709A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B63AC1B42151FF3C007709A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B63AC1B62151FF3C007709A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B63AC1B92151FF3C007709A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B63AC1BB2151FF3C007709A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B63AC1C22151FF70007709A0 /* LYMarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYMarqueeLabel.swift; sourceTree = "<group>"; };
+		B63AC1C32151FF70007709A0 /* LYMarqueeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYMarqueeTimer.swift; sourceTree = "<group>"; };
+		B63AC1C42151FF70007709A0 /* UIView+Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Rect.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B68CE0D52150F9E900111F8C /* Frameworks */ = {
+		B63AC1A92151FF3C007709A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,42 +41,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B68CE0CF2150F9E900111F8C = {
+		B63AC1A32151FF3C007709A0 = {
 			isa = PBXGroup;
 			children = (
-				B68CE0DA2150F9E900111F8C /* LYMarqueeLabelDemo */,
-				B68CE0D92150F9E900111F8C /* Products */,
+				B63AC1AE2151FF3C007709A0 /* LYMarqueeLabelDemo */,
+				B63AC1AD2151FF3C007709A0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		B68CE0D92150F9E900111F8C /* Products */ = {
+		B63AC1AD2151FF3C007709A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B68CE0D82150F9E900111F8C /* LYMarqueeLabelDemo.app */,
+				B63AC1AC2151FF3C007709A0 /* LYMarqueeLabelDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B68CE0DA2150F9E900111F8C /* LYMarqueeLabelDemo */ = {
+		B63AC1AE2151FF3C007709A0 /* LYMarqueeLabelDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B68CE0ED2150FA2500111F8C /* LYMarqueeLabel */,
-				B68CE0DB2150F9E900111F8C /* AppDelegate.swift */,
-				B68CE0DD2150F9E900111F8C /* ViewController.swift */,
-				B68CE0DF2150F9E900111F8C /* Main.storyboard */,
-				B68CE0E22150F9EA00111F8C /* Assets.xcassets */,
-				B68CE0E42150F9EA00111F8C /* LaunchScreen.storyboard */,
-				B68CE0E72150F9EA00111F8C /* Info.plist */,
+				B63AC1C12151FF70007709A0 /* LYMarqueeLabel */,
+				B63AC1AF2151FF3C007709A0 /* AppDelegate.swift */,
+				B63AC1B12151FF3C007709A0 /* ViewController.swift */,
+				B63AC1B32151FF3C007709A0 /* Main.storyboard */,
+				B63AC1B62151FF3C007709A0 /* Assets.xcassets */,
+				B63AC1B82151FF3C007709A0 /* LaunchScreen.storyboard */,
+				B63AC1BB2151FF3C007709A0 /* Info.plist */,
 			);
 			path = LYMarqueeLabelDemo;
 			sourceTree = "<group>";
 		};
-		B68CE0ED2150FA2500111F8C /* LYMarqueeLabel */ = {
+		B63AC1C12151FF70007709A0 /* LYMarqueeLabel */ = {
 			isa = PBXGroup;
 			children = (
-				B68CE0EE2150FA3600111F8C /* UIView+Rect.swift */,
-				B68CE0F02150FA5200111F8C /* LYMarqueeLabel.swift */,
-				B68CE0F221511CC000111F8C /* LYMarqueeTimer.swift */,
+				B63AC1C22151FF70007709A0 /* LYMarqueeLabel.swift */,
+				B63AC1C32151FF70007709A0 /* LYMarqueeTimer.swift */,
+				B63AC1C42151FF70007709A0 /* UIView+Rect.swift */,
 			);
 			path = LYMarqueeLabel;
 			sourceTree = "<group>";
@@ -84,13 +84,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B68CE0D72150F9E900111F8C /* LYMarqueeLabelDemo */ = {
+		B63AC1AB2151FF3C007709A0 /* LYMarqueeLabelDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B68CE0EA2150F9EA00111F8C /* Build configuration list for PBXNativeTarget "LYMarqueeLabelDemo" */;
+			buildConfigurationList = B63AC1BE2151FF3C007709A0 /* Build configuration list for PBXNativeTarget "LYMarqueeLabelDemo" */;
 			buildPhases = (
-				B68CE0D42150F9E900111F8C /* Sources */,
-				B68CE0D52150F9E900111F8C /* Frameworks */,
-				B68CE0D62150F9E900111F8C /* Resources */,
+				B63AC1A82151FF3C007709A0 /* Sources */,
+				B63AC1A92151FF3C007709A0 /* Frameworks */,
+				B63AC1AA2151FF3C007709A0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -98,25 +98,25 @@
 			);
 			name = LYMarqueeLabelDemo;
 			productName = LYMarqueeLabelDemo;
-			productReference = B68CE0D82150F9E900111F8C /* LYMarqueeLabelDemo.app */;
+			productReference = B63AC1AC2151FF3C007709A0 /* LYMarqueeLabelDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B68CE0D02150F9E900111F8C /* Project object */ = {
+		B63AC1A42151FF3C007709A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = rrl360;
 				TargetAttributes = {
-					B68CE0D72150F9E900111F8C = {
+					B63AC1AB2151FF3C007709A0 = {
 						CreatedOnToolsVersion = 10.0;
 					};
 				};
 			};
-			buildConfigurationList = B68CE0D32150F9E900111F8C /* Build configuration list for PBXProject "LYMarqueeLabelDemo" */;
+			buildConfigurationList = B63AC1A72151FF3C007709A0 /* Build configuration list for PBXProject "LYMarqueeLabelDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,57 +124,57 @@
 				en,
 				Base,
 			);
-			mainGroup = B68CE0CF2150F9E900111F8C;
-			productRefGroup = B68CE0D92150F9E900111F8C /* Products */;
+			mainGroup = B63AC1A32151FF3C007709A0;
+			productRefGroup = B63AC1AD2151FF3C007709A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B68CE0D72150F9E900111F8C /* LYMarqueeLabelDemo */,
+				B63AC1AB2151FF3C007709A0 /* LYMarqueeLabelDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B68CE0D62150F9E900111F8C /* Resources */ = {
+		B63AC1AA2151FF3C007709A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68CE0E62150F9EA00111F8C /* LaunchScreen.storyboard in Resources */,
-				B68CE0E32150F9EA00111F8C /* Assets.xcassets in Resources */,
-				B68CE0E12150F9E900111F8C /* Main.storyboard in Resources */,
+				B63AC1BA2151FF3C007709A0 /* LaunchScreen.storyboard in Resources */,
+				B63AC1B72151FF3C007709A0 /* Assets.xcassets in Resources */,
+				B63AC1B52151FF3C007709A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B68CE0D42150F9E900111F8C /* Sources */ = {
+		B63AC1A82151FF3C007709A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68CE0F321511CC000111F8C /* LYMarqueeTimer.swift in Sources */,
-				B68CE0F12150FA5200111F8C /* LYMarqueeLabel.swift in Sources */,
-				B68CE0DE2150F9E900111F8C /* ViewController.swift in Sources */,
-				B68CE0DC2150F9E900111F8C /* AppDelegate.swift in Sources */,
-				B68CE0EF2150FA3600111F8C /* UIView+Rect.swift in Sources */,
+				B63AC1C52151FF70007709A0 /* LYMarqueeLabel.swift in Sources */,
+				B63AC1C62151FF70007709A0 /* LYMarqueeTimer.swift in Sources */,
+				B63AC1B22151FF3C007709A0 /* ViewController.swift in Sources */,
+				B63AC1B02151FF3C007709A0 /* AppDelegate.swift in Sources */,
+				B63AC1C72151FF70007709A0 /* UIView+Rect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B68CE0DF2150F9E900111F8C /* Main.storyboard */ = {
+		B63AC1B32151FF3C007709A0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B68CE0E02150F9E900111F8C /* Base */,
+				B63AC1B42151FF3C007709A0 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		B68CE0E42150F9EA00111F8C /* LaunchScreen.storyboard */ = {
+		B63AC1B82151FF3C007709A0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B68CE0E52150F9EA00111F8C /* Base */,
+				B63AC1B92151FF3C007709A0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B68CE0E82150F9EA00111F8C /* Debug */ = {
+		B63AC1BC2151FF3C007709A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -233,7 +233,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -244,7 +244,7 @@
 			};
 			name = Debug;
 		};
-		B68CE0E92150F9EA00111F8C /* Release */ = {
+		B63AC1BD2151FF3C007709A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -289,7 +289,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -300,14 +300,13 @@
 			};
 			name = Release;
 		};
-		B68CE0EB2150F9EA00111F8C /* Debug */ = {
+		B63AC1BF2151FF3C007709A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HA39D4H634;
 				INFOPLIST_FILE = LYMarqueeLabelDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,14 +318,13 @@
 			};
 			name = Debug;
 		};
-		B68CE0EC2150F9EA00111F8C /* Release */ = {
+		B63AC1C02151FF3C007709A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HA39D4H634;
 				INFOPLIST_FILE = LYMarqueeLabelDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,25 +339,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B68CE0D32150F9E900111F8C /* Build configuration list for PBXProject "LYMarqueeLabelDemo" */ = {
+		B63AC1A72151FF3C007709A0 /* Build configuration list for PBXProject "LYMarqueeLabelDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B68CE0E82150F9EA00111F8C /* Debug */,
-				B68CE0E92150F9EA00111F8C /* Release */,
+				B63AC1BC2151FF3C007709A0 /* Debug */,
+				B63AC1BD2151FF3C007709A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B68CE0EA2150F9EA00111F8C /* Build configuration list for PBXNativeTarget "LYMarqueeLabelDemo" */ = {
+		B63AC1BE2151FF3C007709A0 /* Build configuration list for PBXNativeTarget "LYMarqueeLabelDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B68CE0EB2150F9EA00111F8C /* Debug */,
-				B68CE0EC2150F9EA00111F8C /* Release */,
+				B63AC1BF2151FF3C007709A0 /* Debug */,
+				B63AC1C02151FF3C007709A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = B68CE0D02150F9E900111F8C /* Project object */;
+	rootObject = B63AC1A42151FF3C007709A0 /* Project object */;
 }

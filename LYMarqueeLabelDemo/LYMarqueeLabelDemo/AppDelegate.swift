@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  LYMarqueeLabelDemo
 //
-//  Created by gordon on 2018/9/18.
+//  Created by gordon on 2018/9/19.
 //  Copyright © 2018 rrl360. All rights reserved.
 //
 
