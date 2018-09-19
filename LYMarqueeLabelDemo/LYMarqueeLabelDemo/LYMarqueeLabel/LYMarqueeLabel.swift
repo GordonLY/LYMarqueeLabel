@@ -31,18 +31,22 @@ open class LYMarqueeLabel: UIScrollView {
     open var marqueeInset: UIEdgeInsets
     ///  每次循环滚动的间距
     open var marqueeSpace: CGFloat
+    ///  最小的滚动字符数量 default = 5 (小于5个字符时，不滚动)
+    open var minMarqueeLength: Int
  
     init(frame: CGRect,
          attrTitle: NSAttributedString,
          type: LYMarqueeLabelType = .left2right,
          velocity: TimeInterval = 1,
          inset: UIEdgeInsets = .zero,
-         space: CGFloat = 30) {
+         space: CGFloat = 30,
+         minLength: Int = 5) {
         self.marqueeTitle = attrTitle
         self.marqueeType = type
         self.marqueeVelocity = velocity
         self.marqueeInset = inset
         self.marqueeSpace = space
+        self.minMarqueeLength = minLength
         super.init(frame: frame)
         p_init()
     }
@@ -81,6 +85,7 @@ extension LYMarqueeLabel {
     }
     // MARK: === start timer
     private func p_startTimer() {
+        guard marqueeTitle.length > minMarqueeLength else { return }
         timer = Timer.lyScheduledTimer(withInterval: marqueeVelocity, isRepeat: true, callback: { [weak self](tim) in
             guard let `self` = self else { return }
             self.p_updateMarquee()
