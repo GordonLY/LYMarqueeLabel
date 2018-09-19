@@ -34,7 +34,7 @@ open class LYMarqueeLabel: UIScrollView {
     ///  最小的滚动字符数量 default = 5 (小于5个字符时，不滚动)
     open var minMarqueeLength: Int
  
-    init(frame: CGRect,
+    public init(frame: CGRect,
          type: LYMarqueeLabelType = .left2right,
          velocity: TimeInterval = 1,
          inset: UIEdgeInsets = .zero,
