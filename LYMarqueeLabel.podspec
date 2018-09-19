@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.authors = "Gordon"
   s.ios.deployment_target = "9.0"
-  s.source = { :git => "https://github.com/GordonLY/LYMarqueeLabel.git", :tag => '4.0' }
+  s.source = { :git => "https://github.com/GordonLY/LYMarqueeLabel.git", :tag => s.version }
   s.framework = "UIKit"
 
   s.subspec "LYMarqueeLabel" do |ss|
