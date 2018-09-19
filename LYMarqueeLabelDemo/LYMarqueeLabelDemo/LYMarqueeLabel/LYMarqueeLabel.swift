@@ -35,13 +35,12 @@ open class LYMarqueeLabel: UIScrollView {
     open var minMarqueeLength: Int
  
     init(frame: CGRect,
-         attrTitle: NSAttributedString,
          type: LYMarqueeLabelType = .left2right,
          velocity: TimeInterval = 1,
          inset: UIEdgeInsets = .zero,
          space: CGFloat = 30,
          minLength: Int = 5) {
-        self.marqueeTitle = attrTitle
+        self.marqueeTitle = NSAttributedString()
         self.marqueeType = type
         self.marqueeVelocity = velocity
         self.marqueeInset = inset
@@ -62,7 +61,11 @@ open class LYMarqueeLabel: UIScrollView {
 
 // MARK: - ********* Public Mehtod
 extension LYMarqueeLabel {
-    public func start() {
+    public func start(_ attrTitle: NSAttributedString) {
+        if attrTitle.length > 0 {
+            self.marqueeTitle = attrTitle
+            p_initMarqueeType()
+        }
         p_start()
     }
     public func pause() {
@@ -129,8 +132,6 @@ extension LYMarqueeLabel {
         self.backgroundColor = UIColor.white
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
-        p_initMarqueeType()
-        p_initVelocity()
     }
     // MARK: === 初始化 LYMarqueeLabelType
     private func p_initMarqueeType() {
@@ -140,6 +141,7 @@ extension LYMarqueeLabel {
         default:
             break
         }
+        p_initVelocity()
     }
     // MARK: === left2right init
     private func p_initLeft2right() {
