@@ -85,7 +85,7 @@ extension LYMarqueeLabel {
             guard let `self` = self else { return }
             self.p_updateMarquee()
         })
-        RunLoop.main.add(timer!, forMode: .common)
+        RunLoop.main.add(timer!, forMode: .commonModes)
     }
     
     // MARK: === end timer
