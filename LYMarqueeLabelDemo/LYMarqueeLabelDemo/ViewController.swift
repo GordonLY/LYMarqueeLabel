@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         attr.addAttribute(.font, value: UIFont.systemFont(ofSize: 15), range: NSMakeRange(0, attr.length))
         let marquee = LYMarqueeLabel.init(frame: rect)
         view.addSubview(marquee)
-        marquee.start(attr)
+        marquee.set(marqueeTitle: attr, true)
         
         view.backgroundColor = UIColor.lightGray
     }

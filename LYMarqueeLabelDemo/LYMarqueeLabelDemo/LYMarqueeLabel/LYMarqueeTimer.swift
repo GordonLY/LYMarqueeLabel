@@ -14,7 +14,7 @@ extension Timer {
     @discardableResult
     public class func lyEvery(_ interval: TimeInterval, _ block: @escaping () -> Void) -> Timer {
         let timer = Timer.lyNew(every: interval, block)
-        timer.start()
+        timer.lyStart()
         return timer
     }
     
@@ -24,7 +24,7 @@ extension Timer {
         }
     }
     
-    private func start(runLoop: RunLoop = .current, modes: RunLoopMode...) {
+    private func lyStart(runLoop: RunLoop = .current, modes: RunLoopMode...) {
         let modes = modes.isEmpty ? [.commonModes] : modes
         
         for mode in modes {

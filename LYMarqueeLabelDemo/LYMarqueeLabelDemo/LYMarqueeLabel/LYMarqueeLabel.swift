@@ -17,10 +17,18 @@ public enum LYMarqueeLabelType {
     case paragraph
 //    case line
 }
+public enum LYMarqueeLabelState {
+    case none
+    case playing
+    case pause
+    case stop
+}
 
 open class LYMarqueeLabel: UIScrollView {
     
     public weak var marqueeDelegate: LYMarqueeLabelDelegate?
+    ///  当前的状态
+    public private(set) var state = LYMarqueeLabelState.none
     ///  跑马灯文字
     private var marqueeTitle: NSAttributedString
     ///  类型
@@ -31,21 +39,22 @@ open class LYMarqueeLabel: UIScrollView {
     private var marqueeInset: UIEdgeInsets
     ///  每次循环滚动的间距
     private var marqueeSpace: CGFloat
-    ///  最小的滚动字符数量 default = 0 (小于0个字符时，不滚动)
-    private var minMarqueeLength: Int
+    ///  水平滚动时，给左侧一个空白区域 default = 0
+    ///  会与marqueeInset.left叠加，stop时会去掉
+    private var horizontailLeftSpace: CGFloat
  
     public init(frame: CGRect = .zero,
          type: LYMarqueeLabelType = .left2right,
          velocity: TimeInterval = 1,
          inset: UIEdgeInsets = .zero,
          space: CGFloat = 30,
-         minLength: Int = 0) {
+         hLeftSpace: CGFloat = 0) {
         self.marqueeTitle = NSAttributedString()
         self.marqueeType = type
         self.marqueeVelocity = velocity
         self.marqueeInset = inset
         self.marqueeSpace = space
-        self.minMarqueeLength = minLength
+        self.horizontailLeftSpace = hLeftSpace
         super.init(frame: frame)
         p_init()
     }
@@ -61,19 +70,38 @@ open class LYMarqueeLabel: UIScrollView {
 
 // MARK: - ********* Public Mehtod
 extension LYMarqueeLabel {
-    public func start(_ attrTitle: NSAttributedString) {
+    public func set(marqueeTitle attrTitle: NSAttributedString,
+                      _ playImmediately: Bool = true) {
         if !attrTitle.isEqual(to: marqueeTitle) {
             self.marqueeTitle = attrTitle
             p_endTimer()
             p_initMarqueeType()
+            if playImmediately {
+                p_start()
+            } else {
+                stop()
+            }
+        }
+    }
+    /// user for state after pause
+    public func play() {
+        guard state != .playing else { return }
+        if state == .stop {
+            p_initMarqueeType()
+            p_start()
+        } else {
             p_start()
         }
     }
+    /// pause at this position
     public func pause() {
         p_endTimer()
+        state = .pause
     }
+    /// stop scrolling and reset layout
     public func stop() {
-        p_endTimer()
+        state = .stop
+        p_resetLayout()
     }
     public func layoutChanged() {
         p_layoutChanged()
@@ -86,12 +114,13 @@ extension LYMarqueeLabel {
     
     // MARK: === 开始 Marquee
     private func p_start() {
-        guard marqueeTitle.length > minMarqueeLength else { return }
+//        guard marqueeTitle.length > 0 else { return }
+        state = .playing
         p_startTimer()
     }
     // MARK: === start timer
     private func p_startTimer() {
-        guard marqueeTitle.length > minMarqueeLength else { return }
+//        guard marqueeTitle.length > 0 else { return }
         timer = Timer.lyEvery(marqueeVelocity, { [weak self]() in
             guard let `self` = self else { return }
             self.p_updateMarquee()
@@ -148,13 +177,13 @@ extension LYMarqueeLabel {
     // MARK: === left2right init
     private func p_initLeft2right() {
         
-        self.setContentOffset(.zero, animated: false)
         let titleWidth = marqueeTitle.boundingRect(with: CGSize(width: 0, height: self.m_height), options: .usesLineFragmentOrigin, context: nil).width
         let labelWidth = max(titleWidth, self.m_width)
-        leftLabel.frame = CGRect(x: marqueeInset.left, y: 0, width: labelWidth, height: self.m_height)
+        leftLabel.frame = CGRect(x: marqueeInset.left + horizontailLeftSpace, y: 0, width: labelWidth, height: self.m_height)
         rightLabel.frame = CGRect(x: leftLabel.frame.maxX + marqueeSpace, y: 0, width: labelWidth, height: self.m_height)
         leftLabel.attributedText = marqueeTitle
         rightLabel.attributedText = marqueeTitle
+        self.setContentOffset(.zero, animated: false)
         self.addSubview(leftLabel)
         self.addSubview(rightLabel)
     }
@@ -171,7 +200,12 @@ extension LYMarqueeLabel {
             break
         }
     }
-    
+    // MARK: === reset layout
+    private func p_resetLayout() {
+        p_endTimer()
+        self.setContentOffset(.zero, animated: false)
+        leftLabel.m_left = marqueeInset.left
+    }
     // MARK: === layout changed
     private func p_layoutChanged() {
         guard marqueeTitle.length > 0 else { return }
@@ -181,8 +215,12 @@ extension LYMarqueeLabel {
         let labelWidth = max(titleWidth, self.m_width)
         leftLabel.m_size = CGSize(width: labelWidth, height: self.m_height)
         rightLabel.frame = CGRect(x: leftLabel.frame.maxX + marqueeSpace, y: 0, width: labelWidth, height: self.m_height)
-        self.contentOffset = CGPoint(x: self.contentOffset.x + 1, y: self.contentOffset.y)
-        p_startTimer()
+        if state == .playing {
+            self.contentOffset = CGPoint(x: self.contentOffset.x + 1, y: self.contentOffset.y)
+            p_startTimer()
+        } else {
+            self.setContentOffset(.zero, animated: false)
+        }
     }
 }
 

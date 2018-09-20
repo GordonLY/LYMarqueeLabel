@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "LYMarqueeLabel"
-  s.version = "1.6"
+  s.version = "1.7"
   s.summary = "文字跑马灯"
   s.homepage = "https://github.com/GordonLY/LYMarqueeLabel"
   s.license = { :type => "MIT", :file => "LICENSE" }
