@@ -25,7 +25,7 @@ extension Timer {
     }
     
     private func lyStart(runLoop: RunLoop = .current, modes: RunLoop.Mode...) {
-        let modes = modes.isEmpty ? [RunLoop.Mode.common] : modes
+        let modes = modes.isEmpty ? [.common] : modes
         
         for mode in modes {
             runLoop.add(self, forMode: mode)
