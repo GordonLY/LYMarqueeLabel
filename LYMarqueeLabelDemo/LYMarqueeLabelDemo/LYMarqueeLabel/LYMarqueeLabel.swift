@@ -39,9 +39,6 @@ open class LYMarqueeLabel: UIScrollView {
     private var marqueeInset: UIEdgeInsets
     ///  每次循环滚动的间距
     private var marqueeSpace: CGFloat
-    ///  水平滚动时，给左侧一个空白区域 default = 0
-    ///  会与marqueeInset.left叠加，stop时会去掉
-    private var horizontailLeftSpace: CGFloat
  
     public init(frame: CGRect = .zero,
          type: LYMarqueeLabelType = .left2right,
@@ -54,7 +51,6 @@ open class LYMarqueeLabel: UIScrollView {
         self.marqueeVelocity = velocity
         self.marqueeInset = inset
         self.marqueeSpace = space
-        self.horizontailLeftSpace = hLeftSpace
         super.init(frame: frame)
         p_init()
     }
@@ -179,7 +175,7 @@ extension LYMarqueeLabel {
         
         let titleWidth = marqueeTitle.boundingRect(with: CGSize(width: 0, height: self.m_height), options: .usesLineFragmentOrigin, context: nil).width
         let labelWidth = max(titleWidth, self.m_width)
-        leftLabel.frame = CGRect(x: marqueeInset.left + horizontailLeftSpace, y: 0, width: labelWidth, height: self.m_height)
+        leftLabel.frame = CGRect(x: marqueeInset.left, y: 0, width: labelWidth, height: self.m_height)
         rightLabel.frame = CGRect(x: leftLabel.frame.maxX + marqueeSpace, y: 0, width: labelWidth, height: self.m_height)
         leftLabel.attributedText = marqueeTitle
         rightLabel.attributedText = marqueeTitle
